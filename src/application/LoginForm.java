@@ -105,7 +105,7 @@ public class LoginForm extends JFrame {
         lblLogin.setFont(new Font("Arial", Font.BOLD, 24));
         lblLogin.setBounds(0, 90, 450, 40);
         rightPanel.add(lblLogin);
-       
+        
         JLabel lblUsername = new JLabel("Tên đăng nhập");
         lblUsername.setFont(new Font("Arial", Font.PLAIN, 14));
         lblUsername.setBounds(80, 170, 290, 20);
@@ -140,7 +140,7 @@ public class LoginForm extends JFrame {
         btnLogin.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) { 
                 loginAction();
-            }
+            } 
         }); 
         rightPanel.add(btnLogin);
 
@@ -171,28 +171,31 @@ public class LoginForm extends JFrame {
     private void loginAction() {
         String username = txtUsername.getText();
         String password = new String(txtPassword.getPassword());
-//        	sửa sau -> Lấy từ dbs xuống
-        if (username.equals("admin") && password.equals("admin")) { 
+
+        // TODO: Sau này lấy từ CSDL
+        if (username.equals("admin") && password.equals("admin")) {
             this.dispose();
 
             EventQueue.invokeLater(new Runnable() {
                 public void run() {
                     try {
-                        testGui mainFrame = new testGui();
-                        mainFrame.setSize(1200, 700);
-                        mainFrame.setLocationRelativeTo(null);
-                        mainFrame.setVisible(true);
+                    	Main mainFrame = new Main();
+                    	mainFrame.setSize(1200, 700);
+                    	mainFrame.setLocationRelativeTo(null);
+                    	mainFrame.setVisible(true);
+
                     } catch (Exception e) {
                         e.printStackTrace();
-                    }
+                    } 
                 }
-            });
-        } else { 
-            JOptionPane.showMessageDialog(this, 
-                "Tên đăng nhập hoặc mật khẩu không chính xác!", 
+            }); 
+        } else {
+            JOptionPane.showMessageDialog(this,
+                "Tên đăng nhập hoặc mật khẩu không chính xác!",
                 "Lỗi đăng nhập", JOptionPane.ERROR_MESSAGE);
             txtPassword.setText("");
             txtPassword.requestFocus();
         }
     }
+
 }

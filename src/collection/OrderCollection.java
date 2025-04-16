@@ -1,10 +1,8 @@
-package Collection;
+package collection;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import Entity.Account;
-import Entity.Order;
+import entity.Order;
 
 
 

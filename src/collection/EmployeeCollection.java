@@ -1,10 +1,9 @@
-package Collection;
+package collection;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Entity.Account;
-import Entity.Employee;
+import entity.Employee;
 
 
 public class EmployeeCollection {

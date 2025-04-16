@@ -1,11 +1,11 @@
-package Collection;
+package collection;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import Entity.Account;
-import Entity.Customer;
 
+import entity.Customer;
+ 
 public class CustommerCollection {
 private ArrayList<Customer> customer;
 	
